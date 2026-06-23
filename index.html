@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming World Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- POPUP OVERLAY (REAL POPUP, NOT ALERT) -->
+    <div id="welcomePopup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>🎮 Welcome to Gaming World Hub!</h2>
+                <button class="close-btn" onclick="closePopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p>Get ready for epic gaming content!</p>
+                <p>Explore the latest games, reviews, and gaming guides.</p>
+                <div class="popup-features">
+                    <span>🎯 Latest Games</span>
+                    <span>⭐ Reviews</span>
+                    <span>🏆 Esports</span>
+                </div>
+                <button class="popup-enter-btn" onclick="closePopup()">Enter Now</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <h1>🎮 Gaming World Hub</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Games</a>
+            <a href="#">Reviews</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <h2>Welcome to Gaming World Hub</h2>
+            <p>Discover the latest games, gaming news, esports tournaments, reviews, and gaming guides.</p>
+        </section>
+
+        <!-- FULL TABLE -->
+        <section class="table-section">
+            <h2>🎯 Popular Games - Full Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Game</th>
+                        <th>Genre</th>
+                        <th>Rating</th>
+                        <th>Release Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Minecraft</td><td>Sandbox</td><td>9.5/10</td><td>2011</td></tr>
+                    <tr><td>EA FC 26</td><td>Sports</td><td>9/10</td><td>2025</td></tr>
+                    <tr><td>Call of Duty</td><td>Shooter</td><td>8.8/10</td><td>2024</td></tr>
+                    <tr><td>Elden Ring</td><td>RPG</td><td>9.6/10</td><td>2022</td></tr>
+                    <tr><td>Fortnite</td><td>Battle Royale</td><td>8.5/10</td><td>2017</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- MEDIA GRID WITH YOUTUBE VIDEOS, AUDIO & IMAGES -->
+        <section class="media-grid">
+            <h2>🎬 Gaming Media Gallery</h2>
+            <div class="grid-container">
+                <!-- Row 1 -->
+                <div class="grid-item">
+                    <h3>🎮 Gameplay Video</h3>
+                    <iframe 
+                        width="100%" 
+                        height="250" 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                    <p>Epic Gaming Montage</p>
+                </div>
+                <div class="grid-item">
+                    <h3>🎵 Gaming Music</h3>
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600" alt="Gaming Setup" style="width:100%; height:200px; object-fit:cover;">
+                    <audio controls style="width:100%; margin-top:10px;">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <p>🎧 Gaming Soundtrack</p>
+                </div>
+                <!-- Row 2 -->
+                <div class="grid-item">
+                    <h3>🎮 Game Trailer</h3>
+                    <iframe 
+                        width="100%" 
+                        height="250" 
+                        src="https://www.youtube.com/embed/6hB3S9bIaco" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                    <p>New Game Trailer</p>
+                </div>
+                <div class="grid-item">
+                    <h3>📸 Gaming Gallery</h3>
+                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600" alt="Gaming Setup" style="width:100%; height:200px; object-fit:cover;">
+                    <p>🏆 Gaming Setup</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORM SECTION -->
+        <section class="form-section">
+            <h2>📝 Contact Form</h2>
+            <form onsubmit="return validateForm()">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+
+                <label>Gender:</label>
+                <div class="gender-group">
+                    <input type="radio" id="male" name="gender" value="Male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="Other">
+                    <label for="other">Other</label>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Gaming World Hub | All rights reserved</p>
+    </footer>
+
+    <script>
+        // 1. POPUP WELCOME MESSAGE (REAL POPUP, NOT ALERT)
+        window.onload = function() {
+            document.getElementById('welcomePopup').style.display = 'flex';
+        };
+
+        function closePopup() {
+            document.getElementById('welcomePopup').style.display = 'none';
+        }
+
+        // Close popup when clicking outside
+        window.onclick = function(event) {
+            const popup = document.getElementById('welcomePopup');
+            if (event.target === popup) {
+                popup.style.display = 'none';
+            }
+        };
+
+        // 2. FORM VALIDATION
+        function validateForm() {
+            let name = document.getElementById('name').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let phone = document.getElementById('phone').value.trim();
+            let gender = document.querySelector('input[name="gender"]:checked');
+
+            let isValid = true;
+            let errorMessage = "";
+
+            if (name === "") {
+                errorMessage += "❌ Name is required.\n";
+                isValid = false;
+            }
+
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (email === "") {
+                errorMessage += "❌ Email is required.\n";
+                isValid = false;
+            } else if (!emailPattern.test(email)) {
+                errorMessage += "❌ Please enter a valid email (e.g., stacey20@gmail.com).\n";
+                isValid = false;
+            }
+
+            if (phone === "") {
+                errorMessage += "❌ Phone number is required.\n";
+                isValid = false;
+            } else if (!/^\d{10,}$/.test(phone)) {
+                errorMessage += "❌ Please enter a valid phone number (at least 10 digits).\n";
+                isValid = false;
+            }
+
+            if (!gender) {
+                errorMessage += "❌ Please select a gender.\n";
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert("✅ Form submitted successfully!\n\n" +
+                      "Name: " + name + "\n" +
+                      "Email: " + email + "\n" +
+                      "Phone: " + phone + "\n" +
+                      "Gender: " + gender.value);
+                return true;
+            } else {
+                alert("❌ Validation Errors:\n\n" + errorMessage);
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
